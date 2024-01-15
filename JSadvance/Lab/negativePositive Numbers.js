@@ -7,6 +7,6 @@ function NegativetoPositive(arr) {
       result.push(el);
     }
   }
-  result.forEach((element) => console.log(element));
+  console.log(result.join(`\n`));
 }
 NegativetoPositive([7, -2, 8, 9]);
