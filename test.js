@@ -1,2 +1,4 @@
-let arr=[5,4,3,2,1];
-debugger
+function test(a){
+console.log(a);
+}
+test([1,2,3,4,5]);
