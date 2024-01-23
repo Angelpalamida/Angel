@@ -6,7 +6,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open tamplate.html",
-            "file": "c:\\Users\\PC\\Desktop\\DOMresurces\\01.Edit Element\\tamplate.html"
+            "file": "c:\\Users\\PC\\Desktop\\DOMresurces\\02.Collect List Items\\tamplate.html"
         }
     ]
 }
