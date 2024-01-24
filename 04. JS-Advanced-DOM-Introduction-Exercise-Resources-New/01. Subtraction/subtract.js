@@ -1,5 +1,5 @@
 function subtract() {
   let sum=document.getElementById(`firstNumber`).value-document.getElementById(`secondNumber`).value;
- document.getElementById(`result`).value+sum;
+ document.getElementById(`result`).textContent=sum;
   
 }
