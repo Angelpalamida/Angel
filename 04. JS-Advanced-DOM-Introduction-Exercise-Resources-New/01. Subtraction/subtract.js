@@ -1,3 +1,5 @@
 function subtract() {
-    console.log('TODO:...');
+  let sum=document.getElementById(`firstNumber`).value-document.getElementById(`secondNumber`).value;
+ document.getElementById(`result`).value+sum;
+  
 }
