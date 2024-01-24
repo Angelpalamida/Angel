@@ -11,7 +11,7 @@ function extract(elementId) {
         return match.substring(1, match.length - 1);
       })
       .join("; ");
-console.error(result);
+
     return result;
   } else {
     console.log("No parenthesized text found in the element.");
