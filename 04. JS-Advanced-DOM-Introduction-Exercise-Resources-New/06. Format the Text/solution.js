@@ -7,7 +7,7 @@ function solve() {
 
   
   const outputDiv = document.getElementById("output");
-  
+  outputDiv.innerHTML = ''; 
 
 
   for (let i = 0; i < sentences.length; i += 3) {
@@ -21,5 +21,4 @@ function solve() {
       
       outputDiv.appendChild(paragraph);
   }
- 
 }
