@@ -1,9 +1,7 @@
-import{ expect } from `chai`;
-import{motorcycleRider} from `./MotorcycleRider.js`;
+const assert = require('assert');
 
-
-describe(`Test suite`,function () {
-    it(`shuld load libraries`,()=>{
-        expect(1).to.equal(1);
-    })
-})
+describe('My Tests', function () {
+  it('should pass', function () {
+    assert.equal(1 + 1, 2);
+  });
+});
