@@ -31,52 +31,61 @@ function solve() {
   sendBtn.addEventListener('click', handleSend);
   backBtn.addEventListener('click', handleBack);
 
-  function handleAdd(event) {
-      event.preventDefault();
-      const name = snowmanNameInput.value;
-      const height = snowmanHeightInput.value;
-      const location = locationInput.value;
-      const creator = creatorNameInput.value;
-      const attribute = specialAttributeInput.value;
+  let initialSnowmanName = '';
+let initialSnowmanHeight = '';
+let initialLocation = '';
+let initialCreatorName = '';
+let initialSpecialAttribute = '';
 
-      if (name && height && location && creator && attribute) {
-        while (snowmanPreviewList.firstChild) {
-          snowmanPreviewList.removeChild(snowmanPreviewList.firstChild);
-      }
-          const listItem = document.createElement('li');
-          listItem.innerHTML = `Name: ${name}<br><br>Height: ${height}<br><br>Location: ${location}<br><br>Creator: ${creator}<br><br>Attribute: ${attribute}<br><br>`;
+function handleAdd(event) {
+    event.preventDefault();
+    const name = snowmanNameInput.value;
+    const height = snowmanHeightInput.value;
+    const location = locationInput.value;
+    const creator = creatorNameInput.value;
+    const attribute = specialAttributeInput.value;
 
-          snowmanPreviewList.appendChild(listItem);
+    if (name && height && location && creator && attribute) {
+       
+        initialSnowmanName = name;
+        initialSnowmanHeight = height;
+        initialLocation = location;
+        initialCreatorName = creator;
+        initialSpecialAttribute = attribute;
 
-          snowmanNameInput.value = '';
-          snowmanHeightInput.value = '';
-          locationInput.value = '';
-          creatorNameInput.value = '';
-          specialAttributeInput.value = '';
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `Name: ${name}<br><br>Height: ${height}<br><br>Location: ${location}<br><br>Creator: ${creator}<br><br>Attribute: ${attribute}<br><br>`;
 
-          addBtn.disabled = true;
-          editBtn.disabled = false;
-          nextBtn.disabled = false;
+        snowmanPreviewList.appendChild(listItem);
 
-          snowmanPreviewList.appendChild(editBtn);
-          snowmanPreviewList.appendChild(nextBtn);
-      }
-  }
+        snowmanNameInput.value = '';
+        snowmanHeightInput.value = '';
+        locationInput.value = '';
+        creatorNameInput.value = '';
+        specialAttributeInput.value = '';
 
-  function handleEdit() {
-      snowmanNameInput.value = getValue('Name:');
-      snowmanHeightInput.value = getValue('Height:');
-      locationInput.value = getValue('Location:');
-      creatorNameInput.value = getValue('Creator:');
-      specialAttributeInput.value = getValue('Attribute:');
+        addBtn.disabled = true;
+        editBtn.disabled = false;
+        nextBtn.disabled = false;
 
-      snowmanPreviewList.innerHTML = '';
-      addBtn.disabled = false;
-      editBtn.disabled = true;
-      nextBtn.disabled = true;
+        snowmanPreviewList.appendChild(editBtn);
+        snowmanPreviewList.appendChild(nextBtn);
+    }
+}
 
-      snowmanPreviewList.appendChild(addBtn);
-  }
+function handleEdit() {
+    
+    snowmanNameInput.value = initialSnowmanName;
+    snowmanHeightInput.value = initialSnowmanHeight;
+    locationInput.value = initialLocation;
+    creatorNameInput.value = initialCreatorName;
+    specialAttributeInput.value = initialSpecialAttribute;
+
+    snowmanPreviewList.innerHTML = '';
+    addBtn.disabled = false;
+    editBtn.disabled = true;
+    nextBtn.disabled = true;
+}
 
   function handleNext() {
       snowList.innerHTML = snowmanPreviewList.innerHTML;
