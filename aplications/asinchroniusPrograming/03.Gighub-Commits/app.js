@@ -32,3 +32,4 @@ function loadCommits() {
         item.textContent=`${name}:${message}`;
         return item;
     }
+
